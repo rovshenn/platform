@@ -1,6 +1,6 @@
 import {
   ɵComponentDef as ComponentDef,
-  ɵNG_COMPONENT_DEF as NG_COMPONENT_DEF,
+  ɵNG_COMP_DEF as NG_COMPONENT_DEF,
   Type,
 } from '@angular/core';
 import {
