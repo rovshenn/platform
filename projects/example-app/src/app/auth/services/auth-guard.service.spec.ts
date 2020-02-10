@@ -7,7 +7,7 @@ import { provideMockStore, MockStore } from '@ngrx/store/testing';
 
 describe('Auth Guard', () => {
   let guard: AuthGuard;
-  let store: MockStore<fromAuth.State>;
+  let store: MockStore;
   let loggedIn: MemoizedSelector<fromAuth.State, boolean>;
 
   beforeEach(() => {
@@ -15,8 +15,8 @@ describe('Auth Guard', () => {
       providers: [AuthGuard, provideMockStore()],
     });
 
-    store = TestBed.get(Store);
-    guard = TestBed.get(AuthGuard);
+    store = TestBed.inject(MockStore);
+    guard = TestBed.inject(AuthGuard);
 
     loggedIn = store.overrideSelector(fromAuth.selectLoggedIn, false);
   });

@@ -19,7 +19,7 @@ import { MaterialModule } from '@example-app/material';
 
 describe('Collection Page', () => {
   let fixture: ComponentFixture<CollectionPageComponent>;
-  let store: MockStore<fromBooks.State>;
+  let store: MockStore;
   let instance: CollectionPageComponent;
 
   beforeEach(() => {
@@ -42,7 +42,7 @@ describe('Collection Page', () => {
 
     fixture = TestBed.createComponent(CollectionPageComponent);
     instance = fixture.componentInstance;
-    store = TestBed.get(Store);
+    store = TestBed.inject(MockStore);
 
     spyOn(store, 'dispatch');
   });

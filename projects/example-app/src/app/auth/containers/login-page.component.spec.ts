@@ -11,7 +11,7 @@ import { MaterialModule } from '@example-app/material';
 
 describe('Login Page', () => {
   let fixture: ComponentFixture<LoginPageComponent>;
-  let store: MockStore<fromAuth.State>;
+  let store: MockStore;
   let instance: LoginPageComponent;
 
   beforeEach(() => {
@@ -29,7 +29,7 @@ describe('Login Page', () => {
 
     fixture = TestBed.createComponent(LoginPageComponent);
     instance = fixture.componentInstance;
-    store = TestBed.get(Store);
+    store = TestBed.get(MockStore);
 
     spyOn(store, 'dispatch');
   });

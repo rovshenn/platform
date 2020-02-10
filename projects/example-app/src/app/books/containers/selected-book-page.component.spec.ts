@@ -17,7 +17,7 @@ import { MaterialModule } from '@example-app/material';
 
 describe('Selected Book Page', () => {
   let fixture: ComponentFixture<SelectedBookPageComponent>;
-  let store: MockStore<fromBooks.State>;
+  let store: MockStore;
   let instance: SelectedBookPageComponent;
 
   beforeEach(() => {
@@ -34,7 +34,7 @@ describe('Selected Book Page', () => {
 
     fixture = TestBed.createComponent(SelectedBookPageComponent);
     instance = fixture.componentInstance;
-    store = TestBed.get(Store);
+    store = TestBed.inject(MockStore);
 
     spyOn(store, 'dispatch');
   });
